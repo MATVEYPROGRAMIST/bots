@@ -13,9 +13,15 @@ import {
 	PanelHeader,
 	Header,
 	Group,
-	SimpleCell
+	SimpleCell,
+	Epic,
+	Tabbar,
+	TabbarItem
 } from "@vkontakte/vkui"
 import "@vkontakte/vkui/dist/vkui.css"
+import { Icon28Profile } from '@vkontakte/icons';
+import { Icon28KeyboardBotsOutline } from '@vkontakte/icons';
+import { Icon28NewsfeedOutline } from '@vkontakte/icons';
 
 const App = () => {
 	const { viewWidth } = useAdaptivity()
@@ -26,11 +32,27 @@ const App = () => {
 				<SplitCol spaced={viewWidth && viewWidth > ViewWidth.MOBILE}>
 						<View activePanel="main">
 						<Panel id="main">
-						<PanelHeader>VKUI</PanelHeader>
-							<Group header={<Header mode="secondary">Items</Header>}>
-								<SimpleCell>Hello</SimpleCell>
-								<SimpleCell>World</SimpleCell>
-							</Group>
+						<PanelHeader>Список ботов</PanelHeader>
+						<Group>
+							<Epic
+							  <Tabbar>
+							    <TabbarItem
+							      label="12"
+							      text="Профиль"
+							    ><Icon28Profile /></TabbarItem>
+							    <TabbarItem
+							      label="12"
+							      text="Боты"
+							    ><Icon28KeyboardBotsOutline/></TabbarItem>
+							    <TabbarItem
+							      label="12"
+							      text="События"
+							    ><Icon28NewsfeedOutline /></TabbarItem>
+							  </Tabbar>
+							}>
+						</Group>
+
+						
 						</Panel>
 					</View>
 				</SplitCol>
